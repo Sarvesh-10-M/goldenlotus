@@ -109,14 +109,24 @@ height:auto;
 margin-bottom:60px;
 }
 
+
+.hero h1{
+color:#e6c97a;
+font-family:'Cinzel',serif;
+}
+
 @media (max-width:768px){
 .hero h1{
-font-family:'Cinzel',serif;
 font-size:55px;
-color:#e6c97a;
 margin-top:-120px;
 }
 }
+.hero-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
 #tagline{
 color:#f4d47a;
 font-size:20px;
@@ -192,7 +202,7 @@ border-radius:25px;
 text-align:center;
 transition:all .8s cubic-bezier(.34,1.56,.64,1);
 }
-.problem-item.active{opacity:1}
+
 
 
 .problem-item:hover {
@@ -544,10 +554,17 @@ letter-spacing:1px;
         }
 
         /* 3. NEW DESKTOP HAMBURGER (Hide the toggle on big screens) */
+        
         @media (min-width: 769px) {
-            .hamburger-toggle { display: none !important; }
-        }
-    </style>
+.hamburger-toggle { display: none !important; }
+}
+
+/* FIX SERVICES TITLE HIDING UNDER NAVBAR */
+#services{
+padding-top:120px;
+}
+</style>
+  
 </head>
 <body>
     <div class="stars"></div>
