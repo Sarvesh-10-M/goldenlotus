@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Lotus | Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- General Layout & Background --- */
+        body {
+            background: radial-gradient(circle at center, #2b1405 0%, #140802 60%, #080300 100%);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Keeps footer at bottom even on short pages */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(17, 17, 17, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .navbar a:hover { color: gold; }
+
+        /* --- Content Section --- */
+        .content-wrapper {
+            flex: 1; /* Pushes footer down */
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-container {
+            background: rgba(43, 20, 5, 0.6);
+            border: 1px solid #e6c97a;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        .contact-info h2 {
+            font-family: 'Cinzel';
+            color: #e6c97a;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .info-item {
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+
+        .info-item b { color: #e6c97a; }
+
+        /* --- Floating WhatsApp Button --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            z-index: 9999; /* Ensure it stays above everything */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+
+        /* --- Footer Styles --- */
+        footer {
+            background: #1e2d24;
+            padding: 60px 40px;
+            color: #ddd;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-grid h3, .footer-grid h4 {
+            font-family: 'Cinzel';
+            color: #e6c97a;
+        }
+        /* Fix for the black text in Brochure and Contact sections */
+#brochure p, 
+#brochure li, 
+#contact p, 
+#contact ul, 
+#contact li {
+    color: #ffffff !important; /* Force text to white for readability */
+}
+
+/* Specific fix for the "Get a comprehensive guide" line */
+#brochure > p {
+    color: #f4d47a !important; /* Soft gold to match your tagline theme */
+    opacity: 1;
+}
+
+/* Fix for the Disclaimer text in the Contact section */
+#contact div p {
+    color: #ffffff !important;
+}
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div style="color:gold; font-family:'Cinzel'; font-size:24px; font-weight:600;">Golden Lotus</div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="service.html">Services</a>
+        <a href="problems.html">Problems</a>
+        <a href="brochure.html">Brochure</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<div class="content-wrapper">
+    <h2 style="font-family:'Cinzel'; color:#e6c97a; font-size:40px;">Begin Your Healing Journey</h2>
+    <p>Connect with us to schedule your personalized healing session.</p>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <div class="info-item">
+                <b>Email:</b> thegoldenlotus.com@gmail.com
+            </div>
+            <div class="info-item">
+                <b>Location:</b> Wellness Center <br>
+                Available for remote sessions worldwide
+            </div>
+            <div class="info-item" style="color:#f1cd6b; font-size: 0.9em; border-top: 1px solid #444; padding-top: 20px; margin-top: 20px;">
+                ⚠️ <b>Disclaimer:</b> This service is for spiritual awakening and healing. Our sessions are complementary and should not replace medical or psychological advice.
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="https://wa.me/916363524778?text=Hi%20Golden%20Lotus,%20I%20would%20like%20to%20book%20a%20session." class="whatsapp-float" target="_blank">
+    <svg width="35" height="35" viewBox="0 0 24 24" fill="white">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.748-2.874-2.512-2.96-2.628-.087-.117-.708-.941-.708-1.797 0-.856.448-1.277.608-1.441.16-.164.346-.205.461-.205.115 0 .23 0 .331.005.106.005.249-.04.39.298.144.347.491 1.2.535 1.287.043.087.072.188.014.304-.058.117-.087.188-.173.289-.087.101-.183.227-.26.303-.09.088-.184.184-.08.363.104.179.465.766.997 1.239.685.611 1.26.802 1.44.891.179.09.285.074.39-.044.105-.117.447-.52.566-.697.119-.177.239-.148.405-.087.166.062 1.052.496 1.235.588.183.091.304.137.349.215.045.078.045.454-.099.859zM12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/>
+    </svg>
+</a>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h3>Golden Lotus</h3>
+            <p>Connecting souls with ancient wisdom and modern healing practices for spiritual transformation.</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <p><a href="index.html" style="color:#ddd; text-decoration:none;">Home</a></p>
+            <p><a href="service.html" style="color:#ddd; text-decoration:none;">Services</a></p>
+            <p><a href="contact.html" style="color:#ddd; text-decoration:none;">Contact</a></p>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <p>Help & FAQ</p>
+            <p>Terms & Conditions</p>
+            <p>Privacy Policy</p>
+        </div>
+        <div>
+            <h4>Connect With Us</h4>
+           <p>
+<a href="https://instagram.com/thegoldenlotus.in" target="_blank" style="color:#e6c97a;text-decoration:none;">
+Instagram
+</a>
+•
+Facebook
+•
+Email
+</p>
+        </div>
+    </div>
+    <p style="text-align:center; margin-top:40px; border-top: 1px solid #2d4135; padding-top: 20px;">
+        © 2026 Golden Lotus. All rights reserved. Nurturing souls, one session at a time.
+    </p>
+</footer>
+
+</body>
+</html>

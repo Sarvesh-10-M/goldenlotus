@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Lotus | Brochure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background: radial-gradient(circle at center, #2b1405 0%, #140802 60%, #080300 100%);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #111;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover { color: gold; }
+
+        .logo {
+            color: gold;
+            font-family: 'Cinzel';
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .content {
+            flex: 1;
+            padding: 80px 20px;
+            text-align: center;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .brochure-btn {
+            background: #e6c97a;
+            color: #140802;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Cinzel';
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(230, 201, 122, 0.4);
+            transition: transform 0.2s, background-0.3s;
+        }
+
+        .brochure-btn:hover {
+            transform: scale(1.05);
+            background: #fff;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: radial-gradient(circle at top, #2b1405, #140802);
+            padding: 40px;
+            border: 1px solid #e6c97a;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 40px rgba(230,201,122,0.2);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #e6c97a;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background: #080300;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        footer {
+            background: #1e2d24;
+            padding: 40px;
+            color: #ddd;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .tiny-whatsapp{
+position: fixed;
+bottom: 25px;
+right: 25px;
+background: #25d366;
+width: 45px;
+height: 45px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+z-index: 3000;
+}
+
+.tiny-whatsapp img{
+width:25px;
+height:25px;
+}
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">Golden Lotus</a>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="service.html">Services</a>
+            <a href="problems.html">Problems</a>
+            <a href="brochure.html">Brochure</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1 style="font-family:'Cinzel'; color:#e6c97a; font-size:45px;">Digital Brochure</h1>
+        <p style="margin-bottom: 40px;">Explore our full range of spiritual healing modalities and session details.</p>
+        
+        <button class="brochure-btn" onclick="showDirectPopup()">Request Brochure</button>
+        
+        <p style="margin-top:20px; color:#888; font-size:14px;">Total Services: 6 | PDF Format | Ready to Share</p>
+    </div>
+
+    <div id="brochureModal" class="modal">
+        <div class="modal-content" style="padding: 60px 40px;">
+            <span class="close-btn" onclick="closeBrochureModal()">&times;</span>
+            <h2 style="font-family:'Cinzel'; color:#e6c97a; margin-bottom: 20px;">Thank You!</h2>
+            <p style="font-size: 18px; line-height: 1.6;">
+                Thank you for your interest! <br>
+                Please contact us directly to receive your copy of the brochure.
+            </p>
+            <button class="brochure-btn" style="margin-top: 30px;" onclick="location.href='contact.html'">
+                Go to Contact Page
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function showDirectPopup() {
+            // Option 1: Shows the browser alert you wanted
+            alert("Thank you for your interest! Please contact us to request the brochure.");
+            
+            // Option 2: Also opens your styled modal for a better look
+            document.getElementById("brochureModal").style.display = "flex";
+        }
+
+        function closeBrochureModal() {
+            document.getElementById("brochureModal").style.display = "none";
+        }
+
+        // Close if user clicks outside the box
+        window.onclick = function(event) {
+            let modal = document.getElementById("brochureModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <a href="https://wa.me/916363524778?text=Namaste%20I%20would%20like%20to%20request%20the%20Golden%20Lotus%20brochure" class="tiny-whatsapp" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+</body>
+</html>

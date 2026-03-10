@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Golden Lotus | Services</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+background: radial-gradient(circle at center,#2b1405 0%,#140802 60%,#080300 100%);
+color:white;
+font-family:'Poppins',sans-serif;
+margin:0;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#111;
+}
+
+.navbar a{
+color:white;
+margin:0 10px;
+text-decoration:none;
+}
+
+.section{
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
+text-align:center;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+margin-top:50px;
+}
+
+.service-card{
+background:#d1ccb6;
+color:#1e2d24;
+border-radius:20px;
+overflow:hidden;
+}
+
+.service-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.learn-btn{
+background:#e6e066;
+border:none;
+padding:8px 18px;
+border-radius:20px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background: radial-gradient(circle at top,#2b1405,#140802,#080300);
+color:#e8d4a2;
+border-radius:20px;
+padding:40px;
+max-width:700px;
+max-height:80vh;
+overflow-y:auto;
+margin:auto;
+box-shadow:0 0 40px rgba(230,201,122,0.2);
+}
+
+.close{
+color:#e6c97a;
+font-size:28px;
+cursor:pointer;
+}
+.modal { 
+display:none; 
+position:fixed; 
+top:0; 
+left:0; 
+width:100%; 
+height:100%; 
+background:rgba(0,0,0,0.85); 
+justify-content:center; 
+align-items:center; 
+z-index:2000; 
+}
+
+/* MOBILE FIX FOR PROBLEM CARDS */
+
+@media (max-width:768px){
+
+.problem-grid{
+height:auto;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+.problem-item{
+position:relative;
+transform:none !important;
+width:90%;
+}
+
+.problem-item p{
+display:none;
+margin-top:10px;
+}
+
+.problem-item.open p{
+display:block;
+}
+
+}
+
+
+
+
+</style>
+
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div style="color:gold;font-family:'Cinzel';font-size:20px;">Golden Lotus</div>
+
+<div>
+<a href="index.html">Home</a>
+<a href="service.html">Services</a>
+<a href="problems.html">Problems</a>
+<a href="brochure.html">Brochure</a>
+<a href="contact.html">Contact</a>
+</div>
+
+</nav>
+
+<section class="section">
+
+<h2 style="font-family:'Cinzel';color:#e6c97a;font-size:40px;">
+Our Healing Services
+</h2>
+
+<div class="service-grid">
+
+<div class="service-card">
+<img src="images/pink.jpg">
+<div class="card-content">
+<h3>Crystal Healing</h3>
+<p>Harnesses crystal energy for well-being.</p>
+<button class="learn-btn" onclick="openModal('Crystal Healing')">Learn More</button>
+</div>
+</div>
+
+<div class="service-card">
+<img src="images/download (1).jpg">
+<div class="card-content">
+<h3>Spiritual Counselling</h3>
+<p>Guidance through emotional and spiritual challenges.</p>
+<button class="learn-btn" onclick="openModal('Spiritual Counselling')">Learn More</button>
+</div>
+</div>
+
+<div class="service-card">
+<img src="images/Cellular Healing_ How to Clear Limiting Beliefs & Emotions at the Cellular Level.jpg">
+<div class="card-content">
+<h3>Cellular Healing</h3>
+<p>Targets healing at the cellular level.</p>
+<button class="learn-btn" onclick="openModal('Cellular Healing')">Learn More</button>
+</div>
+</div>
+
+<div class="service-card">
+<img src="images/download (2).jpg">
+<div class="card-content">
+<h3>Psychic Surgery</h3>
+<p>Removes energetic blockages.</p>
+<button class="learn-btn" onclick="openModal('Psychic Surgery')">Learn More</button>
+</div>
+</div>
+
+<div class="service-card">
+<img src="images/What Is the Human Aura (or Biofield)_ - Sanctuary Everlasting.jpg">
+<div class="card-content">
+<h3>Aura Cleansing</h3>
+<p>Purifies the energetic field.</p>
+<button class="learn-btn" onclick="openModal('Aura Cleansing')">Learn More</button>
+</div>
+</div>
+
+<div class="service-card">
+<img src="images/kary.jpg">
+<div class="card-content">
+<h3>Karuna Karmic Healing</h3>
+<p>Resolves deep karmic patterns.</p>
+<button class="learn-btn" onclick="openModal('Karuna Karmic Healing')">Learn More</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">×</span>
+
+<h2 id="modalTitle" style="color:#e6c97a;font-family:'Cinzel';"></h2>
+
+<h4 style="color:#e6c97a;">About This Service</h4>
+<p id="modalAbout"></p>
+
+<h4 style="color:#e6c97a;">Scientific Basis</h4>
+<p id="modalScience"></p>
+
+<h4 style="color:#e6c97a;">Spiritual Perspective</h4>
+<p id="modalSpirit"></p>
+
+<h4 style="color:#e6c97a;">Key Benefits</h4>
+<p id="modalBenefits" style="color:#f1cd6b;font-weight:bold;"></p>
+
+<button class="learn-btn" onclick="closeModal()">Close</button>
+
+</div>
+
+</div>
+
+<script>
+
+const serviceData={
+
+"Crystal Healing":{
+about:"Crystal healing is an ancient holistic practice that works with the subtle vibrational energies of natural crystals to restore balance, harmony, and flow within the body’s energy field. Each crystal is believed to resonate with specific frequencies that help release stress, calm anxiety, dissolve emotional blockages, and realign energy imbalances that may affect overall well-being.This process supports deep relaxation, mental clarity, emotional stability, and the body’s natural self-healing abilities. Crystal healing is ideal for individuals seeking natural stress relief, enhanced focus, emotional grounding, spiritual growth, and a deeper connection to their inner self and higher awareness. 💜✨",
+science:"Crystal healing is an ancient holistic practice that works with the subtle vibrational energies of natural crystals to restore balance, harmony, and flow within the body’s energy field. Each crystal is believed to resonate with specific frequencies that help release stress, calm anxiety, dissolve emotional blockages, and realign energy imbalances that may affect overall well-being.This process supports deep relaxation, mental clarity, emotional stability, and the body’s natural self-healing abilities. Crystal healing is ideal for individuals seeking natural stress relief, enhanced focus, emotional grounding, spiritual growth, and a deeper connection to their inner self and higher awareness. 💜✨uartz crystals respond to pressure and vibration in technology.",
+spirit:"Spiritually, crystals are believed to carry unique vibrational energies that help balance the body’s chakras and emotional state. They are used as tools for intention-setting, meditation, and inner healing. ✨",
+benefits:"Reduces stress and anxiety, balances chakras, enhances emotional clarity, promotes physical healing, boosts energy levels stress, balances chakras, boosts energy."
+},
+
+"Spiritual Counselling":{
+about:"Spiritual Counselling for Children is a gentle and safe way to help children talk about their feelings, worries, and questions about life. It supports children who feel sad, confused, scared, stressed, or emotionally overwhelmed.Through kind listening, calm guidance, and simple spiritual tools, the counsellor helps children feel understood, confident, and emotionally balanced. This service encourages inner peace, self-belief, and a sense of safety, helping children feel happier and more connected to themselves individuals navigate emotional and spiritual challenges.",
+science:"Provides emotional support and stress relief through guided conversation; effects are similar to talk therapy. to therapeutic talk practices.",
+spirit:"Helps individuals connect with their inner self and higher consciousness to gain clarity and purpose. connection with inner wisdom.",
+benefits:"Provides clarity and direction, fosters inner peace, strengthens spiritual connection, aids in processing grief, improves relationships clarity, peace, and emotional support."
+},
+
+"Cellular Healing":{
+about:"Cellular Healing is a deeply restorative energetic therapy that supports the body’s natural ability to renew and rebalance itself at a cellular level. This approach focuses on addressing underlying energetic imprints that may contribute to physical discomfort, emotional distress, and long-standing health challenges rather than only treating surface symptoms. on healing emotional trauma stored within the body.",
+science:"Emotions Researchers have found that memories are stored in cells as well as the brain . cellular responses.",
+spirit:"Restores Thought to realign energy at the cellular level, promoting physical, emotional, and spiritual rejuvenation within energetic structure.",
+benefits:"Boosts energy and vitality, supports immune function, accelerates physical recovery, releases stored trauma, promotes cellular regeneration. vitality and promotes deep healing."
+},
+
+"Psychic Surgery":{
+about:"Psychic or energetic healing works with the body’s natural emotional and mental energy, not physical surgery or medical procedures. It focuses on releasing stress, fear, emotional pain, and negative patterns that can affect a person’s mood, behavior, and overall sense of well-being energetic blockages affecting emotional well-being.",
+science:"They focus on the astral body or aura, claiming to cut away emotional trauma or negative energy without pretending to physically open the skin psychological relief.",
+spirit:"Considered a method of removing energetic blockages and restoring spiritual and emotional balance negative spiritual interference.",
+benefits:"Clears energetic blockages, releases karmic patterns, removes spiritual attachments, alleviates chronic pain, promotes deep emotional release."
+},
+
+"Aura Cleansing":{
+about:"Clears energetic blockages, releases karmic patterns, removes spiritual attachments, alleviates chronic pain, promotes deep emotional release.",
+science:"Changes in perceived energy fields have not been proven; effects may be linked to meditation and mindfulness practices improves emotional health.",
+spirit:"Changes in perceived energy fields have not been proven; effects may be linked to meditation and mindfulness practices energetic protection.",
+benefits:"Improves clarity Removes negative energy, boosts vitality, improves emotional clarity, strengthens energetic boundaries, enhances spiritual protection. vitality."
+},
+
+"Karuna Karmic Healing":{
+about:"Works on karmic patterns and Karuna Karmic Healing is a powerful spiritual modality that focuses on identifying and resolving karmic patterns, ancestral trauma, and unresolved issues from past lives that may be impacting your current existence. It addresses problems such as recurring negative life patterns, persistent bad luck, inexplicable relationship struggles, and deep-seated emotional or physical ailments with no apparent cause. Through a combination of intuitive insight, energy work, and specific Karuna Reiki symbols, the practitioner helps to clear these karmic imprints, bringing profound healing, release, and transformation. This service is for individuals ready to break free from old cycles, heal ancestral lines, and create a more harmonious and fulfilling future. trauma.",
+science:"Reflection and forgiveness improve Benefits are psychological, improving mental health via introspection, forgiveness, and coping strategies health.",
+spirit:"Breaks Aims to release past karmic patterns, foster compassion, and restore energetic harmony within mind, body, and soul. cycles.",
+benefits:"Promotes inner peace and Breaks negative karmic cycles, heals ancestral trauma, resolves past life issues, promotes profound transformation, fosters inner peace and freedom.."
+}
+
+};
+
+function openModal(service){
+
+const data=serviceData[service];
+
+document.getElementById("modalTitle").innerText=service;
+document.getElementById("modalAbout").innerText=data.about;
+document.getElementById("modalScience").innerText=data.science;
+document.getElementById("modalSpirit").innerText=data.spirit;
+document.getElementById("modalBenefits").innerText=data.benefits;
+
+document.getElementById("modal").style.display="flex";
+
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+</script>
+  <footer style="background:#1e2d24;padding:60px 40px;color:#ddd;">
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;max-width:1200px;margin:auto;">
+
+<div>
+<h3 style="font-family:'Cinzel';color:#e6c97a;">Golden Lotus</h3>
+<p style="margin-top:10px;">
+Connecting souls with ancient wisdom and modern healing practices for spiritual transformation and inner peace.
+</p>
+</div>
+
+<div>
+<h4 style="color:#e6c97a;">Quick Links</h4>
+<p>Home</p>
+<p>Services</p>
+<p>Contact</p>
+</div>
+
+<div>
+<h4 style="color:#e6c97a;">Support</h4>
+<p>Help & FAQ</p>
+<p>Feedback</p>
+<p>Terms & Conditions</p>
+<p>Privacy Policy</p>
+</div>
+
+<div>
+<h4 style="color:#e6c97a;">Connect With Us</h4>
+<p>Instagram • Facebook • Email</p>
+</div>
+
+</div>
+
+<p style="text-align:center;margin-top:40px;">
+© 2026 Golden Lotus. All rights reserved. Nurturing souls, one session at a time.
+</p>
+
+</footer>
+</body>
+</html>
